@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.19.1.final using JasperReports Library version 6.19.1-867c00bf88cd4d784d404379d6c05e1b419e8a4c  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Blank_A4" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="810eecfe-f2bd-44cf-81c7-e1cf977ad839">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="MysqlAdater.jrdax"/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="net.sf.jasperreports.export.pdf.glyph.renderer.blocks.x" value="myanmar"/>
+	<queryString>
+		<![CDATA[select * from test]]>
+	</queryString>
+	<field name="id" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="id"/>
+		<property name="com.jaspersoft.studio.field.label" value="id"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="test"/>
+	</field>
+	<field name="name" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="name"/>
+		<property name="com.jaspersoft.studio.field.label" value="name"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="test"/>
+	</field>
+	<field name="address" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="address"/>
+		<property name="com.jaspersoft.studio.field.label" value="address"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="test"/>
+	</field>
+	<field name="NRC" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="NRC"/>
+		<property name="com.jaspersoft.studio.field.label" value="NRC"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="test"/>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="33" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="141" height="30" uuid="8919128d-5399-44c4-8537-3d7cce2f26d3">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="39c1a8b5-ca0e-4b5d-a59f-98b3934621cd"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Pyidaungsu"/>
+				</textElement>
+				<text><![CDATA[နံပါတ် စမ်းသပ်ခြင်း]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="141" y="0" width="138" height="30" uuid="c63c8fbe-e0cc-4b8a-8120-f4936d300902">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="bee5a13e-1927-4aff-8d46-bb67fdcdfbe6"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Pyidaungsu"/>
+				</textElement>
+				<text><![CDATA[နာမည် အခြေနေ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="279" y="0" width="138" height="30" uuid="23b0573d-003a-4799-82bd-7b6dc8fcbfe3">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="5c9b2261-c33c-4d36-b918-46035fd48101"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Pyidaungsu"/>
+				</textElement>
+				<text><![CDATA[လိပ်စာ ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="417" y="0" width="138" height="30" uuid="caeb86c8-7827-4896-bdf5-13bc92832f1d">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="032e5cd0-c944-4f62-9df5-fcb5ca434b6b"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Pyidaungsu"/>
+				</textElement>
+				<text><![CDATA[မှတ်ပုံတင်နံပါတ်  အကြောင်းအရာ]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="30" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="141" height="30" uuid="3fe81d81-dfb1-42d5-a468-4d2aa80c0e88">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="39c1a8b5-ca0e-4b5d-a59f-98b3934621cd"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{id}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="141" y="0" width="138" height="30" uuid="8be4f1c9-b4e7-4ab9-a324-80b4d3483297">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="bee5a13e-1927-4aff-8d46-bb67fdcdfbe6"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="279" y="0" width="138" height="30" uuid="7ecbd977-582b-43b0-addc-da566f4ec121">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="5c9b2261-c33c-4d36-b918-46035fd48101"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{address}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="417" y="0" width="138" height="30" uuid="43d5f098-4cb2-4dbe-b7b8-d7600dfbfe27">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="032e5cd0-c944-4f62-9df5-fcb5ca434b6b"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{NRC}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

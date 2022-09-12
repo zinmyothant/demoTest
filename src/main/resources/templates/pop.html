@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<script type="text/javascript" th:src="@{/js/bootstrap.min.js}"></script>
+<link rel="stylesheet" th:href="@{/css/bootstrap.min.css} " />
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<link rel="stylesheet"
+	href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.12.1/datatables.min.css"/>
+ 
+<script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.12.1/datatables.min.js"></script>
+</head>
+<style>
+#project-label {
+display: block;
+font-weight: bold;
+margin-bottom: 1em;
+}
+#project-icon {
+float: left;
+height: 32px;
+width: 32px;
+}
+#project-description {
+margin: 0;
+padding: 0;
+}
+
+</style>
+<body>
+
+	
+
+	<!-- Button trigger modal -->
+	<h2>Welcome</h2>
+	<div id="project-label">Select a project (type "z" for a start):</div>
+	<input type="text" id="project-description">
+
+	<!-- <p id="project-description"></p> -->
+	<button type="button" class="btn btn-primary" data-bs-toggle="modal"
+		data-bs-target="#exampleModal">Launch demo modal</button>
+
+	<!-- Modal -->
+	<!-- <form th:action="@{/Home/search}" th:object=${student} method="post"> -->
+	<div class="modal fade" id="exampleModal" tabindex="-1"
+		aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+					<button type="button" class="btn-close" data-bs-dismiss="modal"
+						aria-label="Close"></button>
+				</div>
+				<div class="modal-body">
+
+					<div class="form-group">
+						<div class="modal-body ui-front">
+							<label for="name" class="col-form-label">Name:</label><input
+								name="project" id="project" class="form-control"
+								autocomplete="name" />
+						</div>
+					</div>
+					<div id="demo" class="mt-5"></div>
+					<!--  <div class="modal-body ui-front">
+       <input th:field="*{name}" name="p_name" id="p_name" oninput="getRequest()"
+				class="form-control" autocomplete="name" />
+      </div> -->
+
+				</div>
+				<div class="modal-footer"></div>
+			</div>
+		</div>
+	</div>
+	<!-- </form> -->
+	<label style="color: red" th:text=${err}></label>
+	<span th:each="list:${stulist}"> <label>Id: </label> <input
+		th:text="${list.id}" hidden="enable"><br> <label>Name
+			: </label> <input th:text="${list.name}" hidden="enable"><br> <label>Address:
+	</label> <input th:text="${list.address}" hidden="enable"><br> <label>NRC:
+	</label> <input th:text="${list.NRC}" hidden="enable">
+	</span>
+	<script>
+	
+	
+
+		
+		
+		$(function() {
+			//overriding jquery-ui.autocomplete .js functions
+			$.ui.autocomplete.prototype._renderMenu = function(ul, items) {
+			  var self = this;
+			  //table definitions
+			  ul.append("<table><thead><tr><th>ID&nbsp;&nbsp;</th><th>Name&nbsp;&nbsp;</th><th>ACC&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th></tr></thead><tbody></tbody></table>");
+			  $.each( items, function( index, item ) {
+			    self._renderItemData(ul, ul.find("table tbody"), item );
+			  });
+			};
+			$.ui.autocomplete.prototype._renderItemData = function(ul,table, item) {
+			  return this._renderItem( table, item ).data( "ui-autocomplete-item", item );
+			};
+			$.ui.autocomplete.prototype._renderItem = function(table, item) {
+			  return $( "<tr class='ui-menu-item' role='presentation'></tr>" )
+			    //.data( "item.autocomplete", item )
+			    .append( "<td >"+item.id+"</td>"+"<td>"+item.name+"</td>"+"<td id='testing' onclick='choose()'>"+item.nrc+"</td>" )
+			    .appendTo( table );
+			};
+			//random json values
+			
+			$( "#project" ).autocomplete({
+				minLength: 1,
+				source: "searchname",
+			    
+				focus: function( event, ui ) {
+					console.log(ui.item.nrc);
+			        $( "#project" ).val( ui.item.name );
+					$( "#project-id" ).val( ui.item.id );
+					$( "#project-description" ).val( ui.item.nrc );
+					return false;
+				}//you can write for select too
+			    /*select:*/
+			})
+			});
+
+function choose(){
+		
+	
+		
+		$("#exampleModal").modal('hide')
+		
+	}
+	</script>
+	
+</body>
+</html>

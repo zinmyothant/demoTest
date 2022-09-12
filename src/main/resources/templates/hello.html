@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<script type="text/javascript" th:src="@{/js/bootstrap.min.js}"></script>
+   <link rel="stylesheet" th:href="@{/css/bootstrap.min.css} "/>
+
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<style>
+
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+	$(function() {
+		$("#p_name").autocomplete({
+			source : "searchname",
+			minLength : 3
+		});
+	});
+	
+});
+	
+function pop(){
+	prompt("Enter text","Text");
+}
+</script>
+<head>
+<meta charset="ISO-8859-1">
+<title>Search Testing</title>
+</head>
+<body>
+	<H1>Welcome</H1>
+	<form th:action="@{/Home/search}" th:object=${student} method="get">
+		<div class="row">
+			<div class="col">
+				<input th:field="*{name}" name="name" id="p_name"
+				class="ui-autocomplete-input" autocomplete="name" />
+			</div>
+			<div class="col">
+			<i class="fa-solid fa-magnifying-glass">
+			<a href="@{/Home/popup}">	<button type="submit" class="btn btn-primary">Search</button></a></i>
+			</div>
+			
+		</div>
+	</form>
+
+
+	<label style="color: red" th:text=${err}></label>
+	<span th:each="list:${stulist}"> <label>Id: </label> <input
+		th:text="${list.id}" hidden="enable"><br> <label>Name
+			: </label> <input th:text="${list.name}" hidden="enable"><br> <label>Address:
+	</label> <input th:text="${list.address}" hidden="enable"><br> <label>NRC:
+	</label> <input th:text="${list.NRC}" hidden="enable">
+	</span>
+
+</body>
+</html>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<fontFamilies>
+	<fontFamily name="Pyidaungsu">
+		<normal><![CDATA[fonts/unicode/Pyidaungsu-2.3_Regular.ttf]]></normal>
+		<bold><![CDATA[fonts/unicode/Pyidaungsu-2.5.3_Bold.ttf]]></bold>
+		<italic><![CDATA[fonts/unicode/Pyidaungsu-2.5.3_Regular.ttf]]></italic>
+		<bolditalic><![CDATA[fonts/unicode/Pyidaungsu-2.5.3_Regular.ttf]]></bolditalic>
+		<pdfEncoding><![CDATA[Identity-H]]></pdfEncoding>
+		<pdfEmbedded><![CDATA[true]]></pdfEmbedded>
+		<exportFonts />
+	</fontFamily>
+	<fontFamily name="Myanmar 3">
+		<normal><![CDATA[fonts/unicode/Myanmar3-2018.ttf]]></normal>
+		<bold><![CDATA[fonts/unicode/Myanmar3-2018.ttf]]></bold>
+		<italic><![CDATA[fonts/unicode/Myanmar3-2018.ttf]]></italic>
+		<bolditalic><![CDATA[fonts/unicode/Myanmar3-2018.ttf]]></bolditalic>
+		<pdfEncoding><![CDATA[Identity-H]]></pdfEncoding>
+		<pdfEmbedded><![CDATA[true]]></pdfEmbedded>
+		<exportFonts />
+	</fontFamily>
+</fontFamilies>
